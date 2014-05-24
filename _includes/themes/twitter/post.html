@@ -54,8 +54,8 @@
                 
                 var tmp = $("#md").html();
 				alert(tmp);
-				var tmp2 = tmp.replace(/~~\{(.*)\}\n([\s\S]*?)~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
-				
+				var tmp2 = tmp.replace(<pre><code>\n\/\/(.*)\n([\s\S]*?)</code></pre>\n, "<pre><code class=\"language-$1\">$2</code></pre>");
+				alert(tmp2);
 				while(tmp!=tmp2)
 				{	
 					
