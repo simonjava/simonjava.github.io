@@ -7,3 +7,29 @@
     {{ content }}
   </div>
 </div>
+<script>
+            function mdupdate() {
+                var converter = new Showdown.converter();
+                var tmp = $("#md").val();
+				var tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				
+				while(tmp!=tmp2)
+				{	
+					
+					tmp = tmp2;
+					
+					tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				}
+                tmp = converter.makeHtml(tmp);
+                $("#html").html(tmp);
+                Prism.highlightAll();
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "html"]);
+            }
+            $(document).ready(function() {
+				alert("hre");
+                $("#md").on("keyup", function() {
+                    mdupdate();
+                });
+                mdupdate();
+            });
+        </script>
