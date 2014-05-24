@@ -48,24 +48,25 @@
   </div>
 </div>
 
+<!--使得代码高亮-->
  <script>
             function mdupdate() {
                 
                 var tmp = $("#md").html();
 				alert(tmp);
-				var tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				var tmp2 = tmp.replace(/~~\{(.*)\}\n([\s\S]*?)~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
 				
 				while(tmp!=tmp2)
 				{	
 					
 					tmp = tmp2;
 					
-					tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+					tmp2 = tmp.replace(/~~\{(.*)\}\n([\s\S]*?)~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
 				}
               
                 $("#md").html(tmp);
                 Prism.highlightAll();
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "html"]);
+               
             }
             $(document).ready(function() {
 				alert("hre");
