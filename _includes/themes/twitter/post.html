@@ -7,7 +7,7 @@
     <div class="date">
       <span>{{ page.date | date_to_long_string }}</span>
     </div>
-    <div class="content">
+    <div class="content" id="md">
       {{ content }}
     </div>
 
@@ -47,3 +47,31 @@
     {% include JB/comments %}
   </div>
 </div>
+
+ <script>
+            function mdupdate() {
+                
+                var tmp = $("#md").html();
+				alert(tmp);
+				var tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				
+				while(tmp!=tmp2)
+				{	
+					
+					tmp = tmp2;
+					
+					tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				}
+              
+                $("#md").html(tmp);
+                Prism.highlightAll();
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "html"]);
+            }
+            $(document).ready(function() {
+				alert("hre");
+                $("#md").on("keyup", function() {
+                    mdupdate();
+                });
+                mdupdate();
+            });
+        </script>

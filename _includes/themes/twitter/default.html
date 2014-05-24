@@ -70,32 +70,6 @@
 
     {% include JB/analytics %}
 	{% include JB/MathJax %}
-	 <script>
-            function mdupdate() {
-                
-                var tmp = $("#content").html();
-				alert(tmp);
-				var tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
-				
-				while(tmp!=tmp2)
-				{	
-					
-					tmp = tmp2;
-					
-					tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
-				}
-              
-                $("#content").html(tmp);
-                Prism.highlightAll();
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "html"]);
-            }
-            $(document).ready(function() {
-				alert("hre");
-                $("#md").on("keyup", function() {
-                    mdupdate();
-                });
-                mdupdate();
-            });
-        </script>
+	
   </body>
 </html>
