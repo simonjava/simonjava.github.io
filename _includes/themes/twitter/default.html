@@ -16,7 +16,13 @@
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+	  <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+
+<!--增加代码高亮-->
+	 <script src="{{ ASSET_PATH }}/jquery/jquery.js"></script>
+    <link href="{{ ASSET_PATH }}/prism/prism.css" rel="stylesheet" type="text/css" media="all">
+    <script src="{{ ASSET_PATH }}/prism/prism.js"></script>
 
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -29,6 +35,7 @@
     <!-- atom & rss feed -->
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
 
   </head>
 
@@ -63,6 +70,32 @@
 
     {% include JB/analytics %}
 	{% include JB/MathJax %}
-	 
+	 <script>
+            function mdupdate() {
+                var converter = new Showdown.converter();
+                var tmp = $("#content).html();
+				alert(tmp);
+				var tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				
+				while(tmp!=tmp2)
+				{	
+					
+					tmp = tmp2;
+					
+					tmp2 = tmp.replace(/~~~~\{(.*)\}\n([\s\S]*?)~~~~\n/m, "<pre><code class=\"language-$1\">$2</code></pre>");
+				}
+                tmp = converter.makeHtml(tmp);
+                $("#content").html(tmp);
+                Prism.highlightAll();
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "html"]);
+            }
+            $(document).ready(function() {
+				alert("hre");
+                $("#md").on("keyup", function() {
+                    mdupdate();
+                });
+                mdupdate();
+            });
+        </script>
   </body>
 </html>
