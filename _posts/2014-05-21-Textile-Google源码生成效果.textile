@@ -1,0 +1,302 @@
+---
+layout: post
+category : 轻量级标记语言
+tagline: "Textile"
+tags : [Textile,test]
+---
+
+
+Textile会在你的文档中寻找段落，就是html中的 @<p>@ 标签，段落由一个独立的空行分隔。
+<pre><code>第一段
+
+第二段</code></pre>
+
+会生成对应的html为
+
+<pre><code><p>第一段</p>
+
+<p>第二段</p></code></pre>
+
+你也可以直接使用html的标记在你的texile文档中。使用 *pre* 或者 *code* 标签可以避免里面的内容被转义。
+
+所有换行符会被解析为html中的换行符，注意不是 *br* 而是文本的换行。
+
+"双引号"或者'单引号' 会直接被作为实体解析，对应html代码为：<code>&#8220;双引号&#8221;或者&#8216;单引号&#8217;</code> 。
+
+还有一些实体: @--、-、...、x、(TM)、(R)、(C)@ 就不一一介绍了，作为playtime吧。
+
+@hn.@ 对应html中的hn，其中n从1-6。注意 *hn.* 后面有一个空格，比如文中的标题就是如此生成的。
+
+@bq.@ 代表html中的 @<blockquote>@ 。
+
+想写脚注非常简单，这是脚注f[1]，其实就是在你要脚注的位置用 @[@ 和 @]@ 之间加一个数字，如这里的 @[1]@ 。
+
+fn1. www.baidu.com
+
+那么对应的脚注链接地址，可以这么设置 @fn1. 这是脚注一对应的地址@ ，这里注意要新起一个段落。
+
+**这是发现一个textile的bug，就是如果以中文或者.结尾加上[1]是没有反应的。**
+
+@_word_@ 会对应 @<em>word</em>@ ，这是效果： _word_
+
+@__word__@ 对应 @<i>word</i>@ ，这是效果： __word__
+
+@*@ 对应 @<strong>@ ， 这是效果： *word*
+
+@**@ 对应 @<b>@ ， 这是效果： **word**
+
+@??@ 对应 @<cite>@ ， 这是效果： ??word??
+
+这是分别的效果 *word* **word** ??word??
+
+这里我发现一个小技巧就是 @****@ 代表一个 @<hr />@
+
+这是效果 **** 有下划线么?好像没有。
+
+对于 *code* 这个html标签来说，在textile里可以简单的用两个@包起来
+
+@-word-@ 对应 @<del>word</del>@ ，这是效果： -word-
+
+@+word+@ 对应 @<ins>word</ins>@ ，这是效果： +word+
+
+这个比较好玩： @a ^2^ + b ^2^ = c ^2^@ ，这是效果： a ^2^ + b ^2^ = c ^2^
+
+这里有一个小bug被发现，就是我用的是RedCloth 3.0.4，对于处理 @a^2^ + b^2^ = c^2^@ 会出现混乱
+
+解决方法很简单就是用它的3.0.3，因为我看到README中说3.0.3是稳定的，但不知为什么2005年就发布的3.0.4有问题。有时间我再研究下它的代码。
+
+<pre><code>#!ruby
+require 'rubygems'
+gem 'RedCloth', '=3.0.3'
+require 'redcloth'
+
+textiletext = $<.read
+
+r = RedCloth.new(textiletext)
+
+File.open('a.html', 'w') do |f|
+f.puts r.to_html
+end</code></pre>
+
+你这样来强制使用3.0.3，这里注意 *gem* 已经取代了原来的 *require_gem*
+
+@log ~2~ x@ 那么你就会得到 log ~2~ x
+
+@%word%@ 对应 @<span>word</span>@ ，你甚至可以施以魔法 @%{color:red}word%@ ，这是效果： %{color:red}word%
+
+你可以给任意的标记加上CSS属性，这样你就可以施加更多的魔法了。
+
+如 @p(example1). An example@ 、 @p(#big-red). Red here@ ，设置class和id一起用 @p(example1#big-red2). Red here@
+
+你也可以直接写css style里的东西，像这样 @p{color:blue;margin:30px}. Spacey blue@
+
+@p[ruby]. your code@ 这样会生成语言相关的标签。
+
+上面上面的代码会被解释成这样的html
+
+<pre><code><p class="example1">An example</p>
+<p id="big-red">Red here</p>
+<p class="example1" id="big-red2">Red here</p>
+<p style="color:blue; margin:30px;">Spacey blue</p>
+<p lang="ruby">your code</p></code></pre>
+
+如果想快速的地位你的区块，可以使用 @<. >. =. <>.@ ，它们分别对应text-align: left right center justify
+
+@(. ((. (((. ))).@ 有左或者右缩进的效果
+
+使用html的pre内包code标签可以实现贴代码的效果，我这里的大区域，里面有代码的就是这样实现的。
+
+<pre><code><div style="float:right;">
+
+h3. 右边导航
+
+"HuJinpu":http://hujinpu.net/
+"Feed Me":http://feed.hujinpu.net/
+
+</div>
+
+你要写的内容</code></pre>
+
+效果如下：
+
+<div style="float:right;">
+
+h3. 右边导航
+
+"HuJinpu":http://hujinpu.net/
+"Feed Me":http://feed.hujinpu.net/
+
+</div>
+
+你要写的内容
+
+你要写的内容
+
+你要写的内容
+
+你要写的内容
+
+<pre><code># A first item
+# A second item
+# A third</code></pre>
+
+生成带数字的列表，效果如下：
+
+# A first item
+# A second item
+# A third
+
+增加#的数目就可以产生内嵌的数字列表
+
+@* your list item@ 可以实现带符号的列表，也叫bulleted list。当然如果 @*@ 数目增加也可以实现内嵌。看效果：
+
+* outter1
+** inner11
+*** inner111
+** inner12
+** inner13
+* outter2
+** inner21
+** inner22
+
+# outter1
+## inner11
+### 我是非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长非常长的一句话
+## inner12
+## inner13
+# outter2
+## inner21
+## inner22
+
+插入链接也很简单：<code>"my blog":http://hujinpu.net</code> ，效果: "my blog":http://hujinpu.net
+注意这里也发现一个bug，就是<code>@</code>符号包住的链接不会被正确显示里面的代码，这里我是用 **code** 标签做的
+
+如果有很多相同链接，就可以定义链接别名：
+
+<pre><code>I am "HuJinpu":hujinpu
+and "it's":hujinpu "all":hujinpu I ever
+"link to":hujinpu!
+
+[hujinpu]http://hujinpu.net</code></pre>
+
+效果：
+
+I am "HuJinpu":hujinpu
+and "it's":hujinpu "all":hujinpu I ever
+"link to":hujinpu!
+
+[hujinpu]http://hujinpu.net
+
+<pre><code>!your_image_url(your_title)!</code></pre>在两个!中间的是你的图片地址，还可以加上title
+
+<pre><code>!http://www.blogbus.com/profile/6/1/1/4328116/avatar_4328116_96.jpg(狄仁杰)!:http://hujinpu.net/</code></pre>这是联合使用链接和图片，注意 @>. <.@ b等位移符号也可以用于图片
+
+效果：
+
+!http://www.blogbus.com/profile/6/1/1/4328116/avatar_4328116_96.jpg(狄仁杰)!:http://hujinpu.net/
+
+<pre><code>| name | age | sex |
+| joan | 24 | f |
+| archie | 29 | m |
+| bella | 45 | f |</code></pre>
+
+这是最简单的表格
+看效果：
+
+| name | age | sex |
+| joan | 24 | f |
+| archie | 29 | m |
+| bella | 45 | f |
+
+会生成对应的html
+
+<pre><code><table>
+	<tr>
+		<td> name </td>
+		<td> age </td>
+		<td> sex </td>
+	</tr>
+	<tr>
+		<td> joan </td>
+		<td> 24 </td>
+		<td> f </td>
+	</tr>
+	<tr>
+		<td> archie </td>
+		<td> 29 </td>
+		<td> m </td>
+	</tr>
+	<tr>
+		<td> bella </td>
+		<td> 45 </td>
+		<td> f </td>
+	</tr>
+</table></code></pre>
+
+这是一个复杂的表格实例，你可以看到表格的各种变化
+
+<pre><code>|_. attribute list |
+|<. align left |
+|>. align right|
+|=. center |
+|<>. justify |
+|^. valign top |
+|~. bottom |</code></pre>
+
+看效果：
+
+|_. attribute list |
+|<. align left |
+|>. align right|
+|=. center |
+|<>. justify |
+|^. valign top |
+|~. bottom |
+
+你可以跨列
+
+<pre><code>|\2. spans two cols |
+| col 1 | col 2 |</code></pre>
+
+跨列效果：
+
+|\2. spans two cols |
+| col 1 | col 2 |
+
+你也可以跨行
+
+<pre><code>|/3. spans 3 rows | a |
+| b |
+| c |</code></pre>
+
+跨行效果：
+
+|/3. spans 3 rows | a |
+| b |
+| c |
+
+这是运用CSS到表格的例子：
+
+<pre><code>|{background:#ddd}. Grey cell|
+
+table{border:1px solid black}.
+|This|is|a|row|
+|This|is|a|row|
+
+|This|is|a|row|
+{background:#ddd}. |This|is|grey|row|</code></pre>
+
+这是效果：
+
+|{background:#ddd}. Grey cell|
+
+table{border:1px solid black}.
+|This|is|a|row|
+|This|is|a|row|
+
+|This|is|a|row|
+{background:#ddd}. |This|is|grey|row|
+
+我想看到这些效果你就知道textile做了什么，如果不清楚就直接看下生成的表格的源码吧。so easy!
+
+好了，这篇教程就介绍到这里，希望对你有用。
