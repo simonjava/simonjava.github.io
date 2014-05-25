@@ -3,10 +3,10 @@
             function mdupdate() {
                 
                 var tmp = $("#md").html();
-				alert(tmp);
+				
 				var reg=new RegExp(/<pre><code>\n?\/\/\{(.*)\}\n([\s\S]*?)<\/code><\/pre>\n/m);
 				var tmp2 = tmp.replace(reg, "<pre><code class=\"language-$1\">$2</code></pre>");
-				alert(tmp2);
+				
 				while(tmp!=tmp2)
 				{	
 					
@@ -20,10 +20,6 @@
                
             }
             $(document).ready(function() {
-				alert("hre");
-                $("#md").on("keyup", function() {
-                    mdupdate();
-                });
                 mdupdate();
             });
         </script>
