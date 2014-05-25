@@ -48,32 +48,4 @@
   </div>
 </div>
 
-<!--使得代码高亮-->
- <script>
-            function mdupdate() {
-                
-                var tmp = $("#md").html();
-				alert(tmp);
-				var reg=new RegExp(/<pre><code>\n?\/\/\{(.*)\}\n([\s\S]*?)<\/code><\/pre>\n/m);
-				var tmp2 = tmp.replace(reg, "<pre><code class=\"language-$1\">$2</code></pre>");
-				alert(tmp2);
-				while(tmp!=tmp2)
-				{	
-					
-					tmp = tmp2;
-					
-					tmp2 = tmp.replace(reg, "<pre><code class=\"language-$1\">$2</code></pre>");
-				}
-              
-                $("#md").html(tmp);
-                Prism.highlightAll();
-               
-            }
-            $(document).ready(function() {
-				alert("hre");
-                $("#md").on("keyup", function() {
-                    mdupdate();
-                });
-                mdupdate();
-            });
-        </script>
+{% include JB/prism_highlight %}
