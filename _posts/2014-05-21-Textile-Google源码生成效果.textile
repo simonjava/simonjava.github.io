@@ -1,4 +1,4 @@
----
+b---
 layout: post
 category : 轻量级标记语言
 tagline: "Textile"
@@ -300,3 +300,7 @@ table{border:1px solid black}.
 我想看到这些效果你就知道textile做了什么，如果不清楚就直接看下生成的表格的源码吧。so easy!
 
 好了，这篇教程就介绍到这里，希望对你有用。
+
+该页面的源码可以到 "github":sourceurl 中下载。
+
+[sourceurl]https://github.com/simonjava/simonjava.github.io/blob/master/_posts/2014-05-21-Textile-Google%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90%E6%95%88%E6%9E%9C.textile
