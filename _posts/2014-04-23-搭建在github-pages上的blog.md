@@ -34,6 +34,3 @@ class Test
 <p>
 今天就先用这个简单模板写一篇。
 </p>
-<p>{{ page.date | date_to_string }}</p>
-
- ~~ 是 ~~
