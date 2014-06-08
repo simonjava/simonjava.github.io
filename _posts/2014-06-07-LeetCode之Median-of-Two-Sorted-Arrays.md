@@ -1,7 +1,7 @@
 ---
 layout: post
 category : LeetCode
-tagline: "LeetCode第二题"
+tagline: "操蛋的第二题"
 tags : [LeetCode，面试，Median]
 ---
 {% include JB/setup %}
@@ -118,7 +118,7 @@ tags : [LeetCode，面试，Median]
 
 现在已知数组A、B升序，`A.length>=B.length`。求A和B归并后的第K个数。
 
-分析：能成为第K个数肯定是A、B中前k个数，假设前k个的小标是1-k。比较`B[n]`和`A[k-n]`,若`B[n]>A[k-n]`，则A中前`k-n`个数不可能成为第k个数，因为就算`B[1到n-1]`全比`A[k-n]`小，`A[k-n]`也只是`k-1`小的数。
+分析：能成为第K个数肯定是A、B中前k个数，假设前k个的下标是1-k。比较`B[n]`和`A[k-n]`,若`B[n]>A[k-n]`，则A中前`k-n`个数不可能成为第k个数，因为就算`B[1到n-1]`全比`A[k-n]`小，`A[k-n]`也只是`k-1`小的数。
 
 如`A={2,3,4,5,6,7}`和`B={1,8,9,10}`，`k=6`。`B[k/3]=B[3]=9>A[5-3]=3`这里3是第三小的数，就算把8换成比3小的数，3也只是第四小的数。所以可以在A数组中把包括3在内的所有数排除。
 
