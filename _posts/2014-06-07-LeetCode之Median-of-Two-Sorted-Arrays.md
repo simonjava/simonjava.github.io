@@ -1,8 +1,8 @@
 ---
 layout: post
 category : LeetCode
-tagline: "操蛋的第二题"
-tags : [LeetCode，面试，Median]
+tagline: "操蛋的第二题-求两个有序表的第n个数"
+tags : [LeetCode，面试，有序表，二分]
 ---
 {% include JB/setup %}
 
