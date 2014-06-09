@@ -20,6 +20,7 @@ tags : [LeetCode，面试，最长子串，非重复]
 
 代码如下：
 
+	//{java}
 	public class Solution {
 	    public static int lengthOfLongestSubstring(String s) {
 	        int begin=0,end=0;
