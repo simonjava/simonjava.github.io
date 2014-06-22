@@ -28,18 +28,19 @@ There is a more generic way of solving this problem.
 
 解法：这题可以将整数转化为字符串，判断字符串是否为回文，也可以将整数转置，判断转置过后的整数与原整数是否相等。
 
-	//{java}
-	public class Solution {
-    public boolean isPalindrome(int x) {
-        if(x<0)
-            return false;
-        int k=0;
-        int t=x;
-        while(t!=0)
-        {
-            k=k*10+t%10;
-            t/=10;
-        }
-        return x==k;
-    }
-}
+
+		//{java}
+		public class Solution {
+	    public boolean isPalindrome(int x) {
+	        if(x<0)
+	            return false;
+	        int k=0;
+	        int t=x;
+	        while(t!=0)
+	        {
+	            k=k*10+t%10;
+	            t/=10;
+	        }
+	        return x==k;
+	    }
+	}

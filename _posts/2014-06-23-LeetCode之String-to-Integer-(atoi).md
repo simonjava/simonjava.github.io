@@ -31,6 +31,7 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 1. 遇到非数字字符，结束，返回之前的数值
 2. 越界处理，许多人用long保存，然后直接处理越界情况，但long的存储范围也由限制，如`222147483648222222222222222222222222222222222222222222222`这个数据就过不了。这里对越界使用现乘以10再除以10的比较方法，如果乘10除10后数字没有发生变化，则没有越界。
 
+
 	//{java}
 	public class Solution {
 	    public int atoi(String str) {
