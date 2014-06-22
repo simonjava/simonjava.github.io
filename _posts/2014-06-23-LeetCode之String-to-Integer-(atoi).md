@@ -50,7 +50,6 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 	        {
 	            i++;
 	        }
-	        
 	        for(;i<str.length();i++)
 	        {
 	            char c = str.charAt(i);
@@ -69,8 +68,7 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 	                    return min;
 	            }
 	        
-	        }
-	          
+	        }      
 	        if(!isPositive)
 	            k*=-1;
 	        
