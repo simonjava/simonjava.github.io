@@ -9,19 +9,19 @@ tags : [LeetCode，面试，字符串，Z型重排]
 <h4 id="ZigZag-Conversion">ZigZag Conversion</h4>
 
 > The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-<code><pre>
-P   A   H   N
-A P L S I I G
-Y   I   R
-</pre></code>
+>   <code><pre>
+	P   A   H   N
+	A P L S I I G
+	Y   I   R
+	</pre></code>
 >
-And then read line by line: "PAHNAPLSIIGYIR"
+>And then read line by line: "PAHNAPLSIIGYIR"
 >
-Write the code that will take a string and make this conversion given a number of rows:
+>Write the code that will take a string and make this conversion given a number of rows:
 >
-string convert(string text, int nRows);
+>string convert(string text, int nRows);
 >
-convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR". 
+>convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR". 
 
 
 
