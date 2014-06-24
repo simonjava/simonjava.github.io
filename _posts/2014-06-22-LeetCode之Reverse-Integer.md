@@ -22,6 +22,8 @@ Example2: x = -123, return -321
 1. 用`long long`保存下面的`k`，然后循环中判断`k>MAXINT`。
 2. 将`x*10`再除以`10`，判断前后是否相等。
 
+代码如下：
+
 	//{java}
 	public class Solution {
     public int reverse(int x) {
