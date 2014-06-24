@@ -10,7 +10,7 @@ tags : [LeetCode，面试，正则表达式，递归]
 
 >
 Implement regular expression matching with support for 
-
+‘\.’ and ‘\*’\.
 
 	'.' Matches any single character.
 	'*' Matches zero or more of the preceding element.
