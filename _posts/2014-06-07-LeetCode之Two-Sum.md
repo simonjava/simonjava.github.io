@@ -1,8 +1,8 @@
 ---
 layout: post
 category : LeetCode
-tagline: "LeetCode汇总"
-tags : [LeetCode，面试，目录]
+tagline: "和为0的3个数"
+tags : [LeetCode，面试，和为k的n个数]
 ---
 {% include JB/setup %}
 

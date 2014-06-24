@@ -10,7 +10,7 @@ tags : [LeetCode，面试，字符转换]
 
 >Given an integer, convert it to a roman numeral.
 >
-Input is guaranteed to be within the range from 1 to 3999.
+>Input is guaranteed to be within the range from 1 to 3999.
 
 解法：这题主要要理解罗马字符代表的数字的意义，之前不了解，代码写的有点长，数字转换一般就是取余数，除的循环过程。罗马字符每个字符都代表一个值，这里是减的过程。下面贴一个网上的代码。后面一题是罗马字符转换数字，就是加的过程。
 
