@@ -6,15 +6,7 @@ tags : [LeetCode，面试，目录]
 ---
 {% include JB/setup %}
 
-刷几遍[LeetCode](https://oj.leetcode.com/problems/)来恶补下面试算法题。
-#题目
-1. [Two Sum](#TwoSum)
-2. [Median of Two Sorted Arrays](http://simonjava.github.io/leetcode/2014/06/07/LeetCode%E4%B9%8BMedian-of-Two-Sorted-Arrays/)
-3. [Longest Substring Without Repeating Characters](http://simonjava.github.io/leetcode/2014/06/09/LeetCode%E4%B9%8BLongest-Substring-Without-Repeating-Characters/)
-4. [Add Two Numbers](http://simonjava.github.io/leetcode/2014/06/09/LeetCode%E4%B9%8BAdd-Two-Numbers/)
-5. [Longest Palindromic Substring](http://simonjava.github.io/leetcode/2014/06/10/LeetCode%E4%B9%8BLongest-Palindromic-Substring/)
-
-<h4 id="TwoSum">Two Sum</h4>
+<h4 id="Two-Sum">Two Sum</h4>
 
 >Given an array of integers, find two numbers such that they add up to a specific target number.
 
@@ -27,7 +19,28 @@ tags : [LeetCode，面试，目录]
 
 解法：最普通的解法就是两层循环遍历，但是会`O(n^2)`会超时,好一点就是排序后二分查找复杂度是`O(nlogn)`。可以先将数组中数和索引存到HashMap中，然后再遍历查找，如果数组里有重复的数字，要找到所有的这些数的索引，则要将这些索引都当做value存到HashMap中。
 
+补：这题是只有唯一解，如果不只有唯一解呢，则不用`break`。这只是两数求和，元素重复问题暂时不用考虑，如`{2,1,3} target=4`，则`2+2=4`应该是不符合解的要求的，有两个`2`了，这里可能需要些额外判断，即不能是同一个元素。
 
+	//{java}
+	public class Solution {
+	    public int[] twoSum(int[] numbers, int target) {
+	        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+	        for(int i=0;i<numbers.length;i++)
+	        {
+	          map.put(numbers[i],i);
+	        }
+	         for(int i=0;i<numbers.length;i++)
+	        {
+	          if(map.containsKey(target-numbers[i]))
+	          {
+	              int k = map.get(new Integer(target-numbers[i]));
+	              if(i!=k)
+	              return i<k?new int[]{i+1,k+1}:new int[]{k+1,i+1};
+	          }
+	        }
+	        return null;
+	    }
+	}
 
 
 
