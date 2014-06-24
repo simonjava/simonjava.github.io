@@ -6,7 +6,26 @@ tags : [LeetCode，面试，正则表达式，递归]
 ---
 {% include JB/setup %}
 
+<h4 id="Regular-Expression-Matching">Regular Expression Matching</h4>
 
+>Implement regular expression matching with support for ‘.’ and ‘*’.
+>
+		'.' Matches any single character.
+		'*' Matches zero or more of the preceding element.
+	
+		The matching should cover the entire input string (not partial).
+			
+		The function prototype should be:
+		bool isMatch(const char *s, const char *p)
+			
+		Some examples:
+		isMatch("aa","a") → false
+		isMatch("aa","aa") → true
+		isMatch("aaa","aa") → false
+		isMatch("aa", "a*") → true
+		isMatch("aa", ".*") → true
+		isMatch("ab", ".*") → true
+		isMatch("aab", "c*a*b") → true
 
 
 解法：这里的匹配是指两者完全匹配。如果没有`*`那么问题很简单。
