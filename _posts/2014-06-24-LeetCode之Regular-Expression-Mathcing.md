@@ -9,9 +9,8 @@ tags : [LeetCode，面试，正则表达式，递归]
 <h4 id="Regular-Expression-Matching">Regular Expression Matching</h4>
 
 >
-Implement regular expression matching with support for ‘\.’ and ‘*’.
+Implement regular expression matching with support for 
 
-xx
 
 	'.' Matches any single character.
 	'*' Matches zero or more of the preceding element.
