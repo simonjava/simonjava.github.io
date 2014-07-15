@@ -6,7 +6,7 @@ tags : [LeetCode，面试，链表，，递归，顺序调换]
 ---
 {% include JB/setup %}
 
-<h4 id="page.title">{{page.title}}</h4>
+<h4>{{page.title|remove_first:'Leetcode之'}}</h4>
 
 >Given a linked list, swap every two adjacent nodes and return its head.
 >
