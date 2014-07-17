@@ -8,7 +8,7 @@ tags : [LeetCode，面试，正则匹配，贪心，递归]
 
 <h4>{{page.title|remove_first:'Leetcode之'}}</h4>
 
->Implement wildcard pattern matching with support for '?' and '*'.
+>Implement wildcard pattern matching with support for `?` and `*`.
 >
 
 
@@ -76,7 +76,7 @@ tags : [LeetCode，面试，正则匹配，贪心，递归]
 	    } 
 	}
 
-递归代码，会超时
+递归代码，会超时:
 
 	//{java}
 	public class Solution {
