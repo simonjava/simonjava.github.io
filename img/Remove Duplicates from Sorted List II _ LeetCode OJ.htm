@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="utf-8"><script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/iubenda.js"></script><script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/analytics.js" async=""></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({QJf3ax:[function(t,n){function e(t){function n(n,e,o){t&&t(n,e,o),o||(o={});for(var a=i(n),u=a.length,c=o[r]||(o[r]={}),f=0;u>f;f++)a[f].apply(c,e);return c}function o(t,n){u[t]=i(t).concat(n)}function i(t){return u[t]||[]}function a(){return e(n)}var u={};return{on:o,emit:n,create:a,listeners:i,_events:u}}var r="nr@context";n.exports=e()},{}],ee:[function(t,n){n.exports=t("QJf3ax")},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],D5DuLP:[function(t,n){function e(t,n,e){return r.listeners(t).length?r.emit(t,n,e):(o[t]||(o[t]=[]),void o[t].push(n))}var r=t(1).create(),o={};n.exports=e,e.ee=r,r.q=o},{1:"QJf3ax"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var n=c.createElement("script");n.src=l.proto+t.agent,c.body.appendChild(n)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=n.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",e,!1)):(c[s]("onreadystatechange",r),u[s]("onload",e)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","queueTime":0,"licenseKey":"8d5fb92f6e","agent":"js-agent.newrelic.com/nr-454.min.js","transactionName":"ZwMAYEdSCktRWxZRXV5JJEFbUBBRX1ZNSEBfBA5RWEABTB5OC11FQ1wTQVBAEFFfVj1cV0QHC1g=","applicationID":"2098939","errorBeacon":"bam.nr-data.net","applicationTime":32}</script>
+    <title>Remove Duplicates from Sorted List II | LeetCode OJ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://oj.leetcode.com/static/images/favicon.ico" type="image/x-icon">
+
+    <link href="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/bootstrap.css" rel="stylesheet">
+    
+
+    <style>
+      body {
+        overflow-y: scroll;
+      }
+      a {
+        color: #0088cc;
+      }
+      a:hover {
+        color: #005580;
+      }
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .block-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .message {
+         border: 1px solid #e6db55;
+         background-color: #ffffe0;
+         padding: 15px 30px 15px 15px;
+         margin: 20px 0;
+       }
+      .navbar-extra {
+         border-radius: 0px;
+         margin-bottom: 30px;
+      }
+      #chat-link {
+        position: fixed;
+        right: 5px;
+        bottom: 10px;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        padding: 5px 15px 10px 15px;
+        -webkit-border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        -ms-border-radius: 5px 0 0 5px;
+        -o-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        color: #979faf;
+      }
+      .glyphicon-envelope {
+        text-align: center;
+        line-height: 26px;
+        margin-right: 5px;
+        position: relative;
+      }
+      [ng-cloak] { display: none; }
+      .editor {
+        font-size: 14px !important;
+        border: 1px solid #e0e0e0;
+        height: 475px;
+      }
+    </style>
+    
+<link rel="stylesheet" href="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/97af56613195.css" type="text/css">
+
+
+    <script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/jquery/jquery-1.11.1.min.js"><\/script>')</script>
+  <style id="ace_editor">.ace_editor {position: relative;overflow: hidden;font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;font-size: 12px;line-height: normal;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: text;min-width: 100%;}.ace_dragging, .ace_dragging * {cursor: move !important;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;}.ace_text-input.ace_composition {background: #f8f8f8;color: #111;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;/* setting pointer-events: auto; on node under the mouse, which changesduring scroll, will break mouse wheel scrolling in Safari */pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0px;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-moz-transition: opacity 0.18s;-webkit-transition: opacity 0.18s;-o-transition: opacity 0.18s;-ms-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;display: block;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}/*** Dark version for fold widgets*/.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-moz-transition: opacity 0.4s ease 0.05s;-webkit-transition: opacity 0.4s ease 0.05s;-o-transition: opacity 0.4s ease 0.05s;-ms-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-moz-transition: opacity 0.05s ease 0.05s;-webkit-transition: opacity 0.05s ease 0.05s;-o-transition: opacity 0.05s ease 0.05s;-ms-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;border-radius: 2px;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style type="text/css"></style></head>
+
+  <body>
+    <div id="bootstrap-css-test" class="hide"></div>
+    <script>
+      if ($('#bootstrap-css-test').is(':visible') === true) {
+        $('head').prepend('<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">');
+      }
+    </script>
+    
+    <div class="navbar navbar-inverse navbar-extra">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://oj.leetcode.com/">LeetCode OJ</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="problemsNav"><a href="https://oj.leetcode.com/problems/">Problems</a></li>
+            <li id="pickNav"><a href="https://oj.leetcode.com/problems/sqrtx">Pick One!</a></li>
+            <li id="submissionsNav"><a href="https://oj.leetcode.com/submissions/">Submissions</a></li>
+            <!-- TODO: not hard code -->
+            
+            <li id=""><a href="https://oj.leetcode.com/discuss/">Discuss</a></li>
+            
+            
+            
+            <li id="donateNav"><a href="https://oj.leetcode.com/donate/"><font color="#ed9c28">Donate</font></a></li>
+            
+            
+          </ul>
+          
+          <ul id="navBar-right" class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" style="margin-bottom:-5px" data-toggle="dropdown">
+              <img class="img-rounded" src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/43eceb983ffcf479601155c73316dfcf.jpg">&nbsp;&nbsp;chengsimin1989
+            </a>
+            <ul class="dropdown-menu">
+              
+              <li><a href="https://oj.leetcode.com/discuss/user/chengsimin1989">My Discuss</a></li>
+              
+              <li><a href="https://oj.leetcode.com/profile/">Profile</a></li>
+              
+              <!-- TODO:  Dashboard  -->
+              <li><a href="https://oj.leetcode.com/accounts/password/change/">Change Password</a></li>
+              <li class="divider"></li>
+              <li><a href="https://oj.leetcode.com/accounts/logout/">Sign out</a></li>
+            </ul>
+            </li>
+          </ul>
+          
+          <!--
+          <form class="navbar-form pull-right">
+            <input class="col-md-2" type="text" placeholder="Email">
+            <input class="col-md-2" type="password" placeholder="Password">
+            <button type="submit" class="btn">Sign in</button>
+          </form>
+          -->
+        </div><!--/.navbar-collapse -->  
+      </div>
+    </div> 
+
+    
+
+<div class="ng-scope" ng-app="app">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="question-title">
+          <h3 style="display:inline">Remove Duplicates from Sorted List II</h3>
+          <span class="total-ac text-info">Total Accepted: <strong>19520</strong></span>
+          <span class="total-submit text-info">Total Submissions: <strong>78362</strong></span>
+          <a class="pull-right btn btn-default" href="https://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/submissions/">My Submissions</a>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="question-content">
+              <p></p><p>
+Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only <i>distinct</i> numbers from the original list.
+</p>
+<p>
+For example,<br>
+Given <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>, return <code>1-&gt;2-&gt;5</code>.<br>
+Given <code>1-&gt;1-&gt;1-&gt;2-&gt;3</code>, return <code>2-&gt;3</code>.
+</p><p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="interviewed_div">
+      <form class="ng-pristine ng-valid" id="interviewed_form" method="post" action="/interviewed/">
+        <input name="csrfmiddlewaretoken" value="OPCGOccux1GexR4l5AaYJQ47zvJgS7lN" type="hidden">
+        <input name="question_id" value="82" type="hidden">
+        <span>Have you been asked this question in an interview?</span>
+        <button id="interviewed_button" class="btn btn-default" title="Yes" type="submit">
+          Yes
+        </button>
+      </form>
+      <span id="interviewed_state"></span>
+    </div>
+    
+    
+    <p class="action">
+      <a class="btn btn-success btn-pad" href="https://oj.leetcode.com/discuss/oj/remove-duplicates-from-sorted-list-ii">Discuss</a>
+    </p>
+    
+    <hr>
+  </div>
+  <form class="container ng-scope ng-valid ng-dirty" id="ajaxform" method="post" action="/problems/remove-duplicates-from-sorted-list-ii/submit/" ng-controller="AceCtrl">
+    <input name="csrfmiddlewaretoken" value="OPCGOccux1GexR4l5AaYJQ47zvJgS7lN" type="hidden">
+    <input name="question_id" value="82" type="hidden">
+    <input name="judge_type" value="large" type="hidden">
+    <input name="data_input" value="" type="hidden">
+    <div class="row" style="margin-bottom:12px;">
+      <div class="col-md-2">
+        <select class="form-control ng-pristine ng-valid" name="lang" ng-model="selectedLang" ng-options="lang.text for lang in langs track by lang.value"><option value="cpp">C++</option><option selected="selected" value="java">Java</option><option value="python">Python</option></select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" ng-init="init([{'value': 'cpp', 'text': 'C++' },{'value': 'java', 'text': 'Java' },{'value': 'python', 'text': 'Python' },], '82');">
+        <div ng-switch="" on="selectedLang.value">
+        
+          <!-- ngSwitchWhen: cpp -->
+        
+          <!-- ngSwitchWhen: java --><div style="height: 646px;" ui-ace="aceOption('java')" ng-model="code.java" ng-switch-when="java" class="editor ng-scope ng-valid ace_editor ace-tm ng-dirty"><div style="position: absolute;"></div><textarea style="opacity: 0; height: 17px; width: 8px; right: 990px; bottom: 408px;" spellcheck="false" wrap="off" class="ace_text-input"></textarea><div class="ace_gutter"><div style="margin-top: 0px; height: 680px; width: 49px;" class="ace_layer ace_gutter-layer ace_folding-enabled"><div style="height: 17px;" class="ace_gutter-cell ">1<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">2</div><div style="height: 17px;" class="ace_gutter-cell ">3<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">4</div><div style="height: 17px;" class="ace_gutter-cell ">5</div><div style="height: 17px;" class="ace_gutter-cell ">6<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">7</div><div style="height: 17px;" class="ace_gutter-cell ">8</div><div style="height: 17px;" class="ace_gutter-cell ">9</div><div style="height: 17px;" class="ace_gutter-cell ">10</div><div style="height: 17px;" class="ace_gutter-cell ">11</div><div style="height: 17px;" class="ace_gutter-cell ">12<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">13</div><div style="height: 17px;" class="ace_gutter-cell ">14</div><div style="height: 17px;" class="ace_gutter-cell ">15<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">16</div><div style="height: 17px;" class="ace_gutter-cell ">17</div><div style="height: 17px;" class="ace_gutter-cell ">18</div><div style="height: 17px;" class="ace_gutter-cell ">19</div><div style="height: 17px;" class="ace_gutter-cell ">20</div><div style="height: 17px;" class="ace_gutter-cell ">21<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">22</div><div style="height: 17px;" class="ace_gutter-cell ">23</div><div style="height: 17px;" class="ace_gutter-cell ">24</div><div style="height: 17px;" class="ace_gutter-cell ">25<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">26</div><div style="height: 17px;" class="ace_gutter-cell ">27</div><div style="height: 17px;" class="ace_gutter-cell ">28</div><div style="height: 17px;" class="ace_gutter-cell ">29</div><div style="height: 17px;" class="ace_gutter-cell ">30<span style="height: 17px;" class="ace_fold-widget ace_start ace_open"></span></div><div style="height: 17px;" class="ace_gutter-cell ">31</div><div style="height: 17px;" class="ace_gutter-cell ">32</div><div style="height: 17px;" class="ace_gutter-cell ">33</div><div style="height: 17px;" class="ace_gutter-cell ">34</div><div style="height: 17px;" class="ace_gutter-cell ">35</div><div style="height: 17px;" class="ace_gutter-cell ">36</div><div style="height: 17px;" class="ace_gutter-cell ">37</div><div style="height: 17px;" class="ace_gutter-cell ">38</div></div><div style="top: 221px; height: 17px;" class="ace_gutter-active-line"></div></div><div style="left: 49px; right: 0px; bottom: 0px;" class="ace_scroller"><div style="margin-top: 0px; width: 1089px; height: 680px; margin-left: 0px;" class="ace_content"><div class="ace_layer ace_print-margin-layer"><div style="left: 644px; visibility: hidden;" class="ace_print-margin"></div></div><div class="ace_layer ace_marker-layer"></div><div style="padding: 0px 4px;" class="ace_layer ace_text-layer"><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">/**</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;Definition&nbsp;for&nbsp;singly-linked&nbsp;list.</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;public&nbsp;class&nbsp;ListNode&nbsp;{</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;val;</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode&nbsp;next;</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListNode(int&nbsp;x)&nbsp;{</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;=&nbsp;x;</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next&nbsp;=&nbsp;null;</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*&nbsp;}</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_comment ace_doc">&nbsp;*/</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px"><span class="ace_keyword">public</span>&nbsp;<span class="ace_keyword">class</span>&nbsp;<span class="ace_identifier">Solution</span>&nbsp;{</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_comment">//trouble</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">public</span>&nbsp;<span class="ace_identifier">ListNode</span>&nbsp;<span class="ace_identifier">deleteDuplicates</span>(<span class="ace_identifier">ListNode</span>&nbsp;<span class="ace_identifier">head</span>)&nbsp;{</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">int</span>&nbsp;<span class="ace_identifier">last</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_constant ace_numeric">-1</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">ListNode</span>&nbsp;<span class="ace_identifier">temp</span><span class="ace_keyword ace_operator">=</span><span class="ace_keyword">new</span>&nbsp;<span class="ace_identifier">ListNode</span>(<span class="ace_identifier">last</span>);</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">temp</span>.<span class="ace_identifier">next</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_identifier">head</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">ListNode</span>&nbsp;<span class="ace_identifier">p</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_identifier">temp</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">while</span>(<span class="ace_identifier">p</span><span class="ace_keyword ace_operator">!=</span><span class="ace_constant ace_language">null</span><span class="ace_keyword ace_operator">&amp;&amp;</span><span class="ace_identifier">p</span>.<span class="ace_identifier">next</span><span class="ace_keyword ace_operator">!=</span><span class="ace_constant ace_language">null</span>)</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">ListNode</span>&nbsp;<span class="ace_identifier">t</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_identifier">p</span>.<span class="ace_identifier">next</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">boolean</span>&nbsp;<span class="ace_identifier">f</span>&nbsp;<span class="ace_keyword ace_operator">=</span><span class="ace_constant ace_language ace_boolean">false</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">while</span>(<span class="ace_identifier">t</span>.<span class="ace_identifier">next</span><span class="ace_keyword ace_operator">!=</span><span class="ace_constant ace_language">null</span><span class="ace_keyword ace_operator">&amp;&amp;</span><span class="ace_identifier">t</span>.<span class="ace_identifier">val</span><span class="ace_keyword ace_operator">==</span><span class="ace_identifier">t</span>.<span class="ace_identifier">next</span>.<span class="ace_identifier">val</span>)</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">t</span><span class="ace_keyword ace_operator">=</span><span class="ace_identifier">t</span>.<span class="ace_identifier">next</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">f</span><span class="ace_keyword ace_operator">=</span><span class="ace_constant ace_language ace_boolean">true</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">if</span>(<span class="ace_identifier">f</span>)</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">p</span>.<span class="ace_identifier">next</span><span class="ace_keyword ace_operator">=</span><span class="ace_identifier">t</span>.<span class="ace_identifier">next</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">else</span></div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">p</span><span class="ace_keyword ace_operator">=</span><span class="ace_identifier">p</span>.<span class="ace_identifier">next</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">return</span>&nbsp;<span class="ace_identifier">temp</span>.<span class="ace_identifier">next</span>;</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">&nbsp;&nbsp;&nbsp;&nbsp;}</div></div><div class="ace_line_group" style="height:17px"><div class="ace_line" style="height:17px">}</div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div style="left: 108px; top: 221px; width: 8px; height: 17px;" class="ace_cursor"></div></div></div></div><div style="display: none; width: 22px; bottom: 0px;" class="ace_scrollbar ace_scrollbar-v"><div style="width: 22px; height: 646px;" class="ace_scrollbar-inner"></div></div><div style="display: none; height: 22px; left: 49px; right: 0px;" class="ace_scrollbar ace_scrollbar-h"><div style="height: 22px; width: 1097px;" class="ace_scrollbar-inner"></div></div><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; white-space: pre; font-family: inherit; font-style: inherit; font-variant: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; -moz-font-feature-settings: inherit; -moz-font-language-override: inherit; overflow: visible;">X</div></div></div>
+        
+          <!-- ngSwitchWhen: python -->
+        
+        </div>
+      </div> 
+    </div>
+    <input value="/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        int last = -1;
+        ListNode temp=new ListNode(last);
+        temp.next = head;
+        ListNode p = temp;
+        while(p!=null&amp;&amp;p.next!=null)
+        {
+            ListNode t = p.next;
+            boolean f =false;
+            while(t.next!=null&amp;&amp;t.val==t.next.val)
+            {
+                t=t.next;
+                f=true;
+            }
+            if(f)
+            {
+                p.next=t.next;
+            }
+            else
+                p=p.next;
+        }
+        return temp.next;
+    }
+}" name="typed_code" type="hidden">
+    <div class="action">
+      
+        
+          
+            
+              <button id="button1" class="btn btn-primary btn-pad" type="submit">Submit Solution</button>
+            
+          
+        
+      
+      <span id="submit_wait" class="loading-center hide">
+          <img src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/loading.gif" class="img-rounded">
+      </span>
+      <div id="submit_error" class="btn text-danger hide">Submit failed, try again please.</div>
+      <div id="submit_warning" class="btn text-danger hide"></div>
+    </div>
+  </form>
+
+  <style>
+  .pad-left {
+    padding-left: 10px;
+  }
+  .pad-right {
+    padding-right: 30px;
+  }
+  .testcase-label {
+    color: #B25150;
+  }
+  .testcase-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    font-family: Menlo,Monaco,Consolas,'Courier New',monospace-webkit-body;
+    white-space: pre;
+  }
+</style>
+
+<div class="ng-scope" ng-controller="PollerCtrl">
+  <div id="result" class="container">
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Submission Result: <a href="https://oj.leetcode.com/submissions/detail/11585257/" class="ng-binding text-success" id="result_state" ng-class="{'blue': 'text-info', 'green': 'text-success', 'red': 'text-danger'}[statusColor]">Accepted</a></h4>
+          </div>
+        </div>
+        <div class="ng-hide" id="last_executed_testcase_output_row" ng-show="showLastTestCase()">
+          <div class="alert alert-danger col-md-12">
+            <table class="testcase-table">
+              <tbody><tr class="ng-hide" id="runtime_error_row" ng-show="runtimeError">
+                <td class="pad-left testcase-label" style="padding-right: 15px;">Runtime Error Message:</td>
+                <td id="runtime_error_output" class="text-danger line-wrap ng-binding" style="font-weight: bold;"></td>
+              </tr>
+              <tr>
+                <td class="pad-left testcase-label" style="padding-right: 15px;">Last executed input:</td>
+                <td id="last_executed_testcase_output" class="text-danger line-wrap ng-binding" style="font-weight: bold;"></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+        <div class="ng-hide" id="result_code_output_row" ng-show="resultCodeOutput">
+          <div id="result_code_output" class="alert alert-danger ng-binding"></div>
+        </div>
+        <div class="ng-hide" id="wa_output" ng-show="showWaTestCase()">
+          <div class="alert alert-danger col-md-12">
+            <table class="testcase-table">
+              <tbody><tr style="color: #333;">
+                <td class="pad-left testcase-label">Input:</td>
+                <td id="result_wa_testcase_input" class="line-wrap ng-binding" style="font-weight: bold"></td>
+              </tr>
+              <tr class="text-danger">
+                <td class="pad-left testcase-label">Output:</td>
+                <td id="result_wa_testcase_output" class="line-wrap ng-binding" style="font-weight: bold"></td>
+              </tr>
+              <tr class="text-success">
+                <td class="pad-left pad-right testcase-label">Expected:</td>
+                <td id="result_wa_testcase_expected" class="line-wrap ng-binding" style="font-weight: bold"></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+ 
+    
+    <div class="container">
+      <hr>
+    </div> <!-- /container --> 
+    <footer>
+    <p class="text-center">
+      <a href="https://oj.leetcode.com/faq/">Frequently Asked Questions</a> | 
+      <a href="https://oj.leetcode.com/tos/">Terms of Service</a>
+    </p>
+    <p class="text-center">
+      <iframe style="width:105px; height:22px;" allowtransparency="true" scrolling="no" class="iubenda-ibadge" frameborder="0"></iframe><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+    </p>
+    <p class="text-center">Copyright © 2014 LeetCode</p> 
+    </footer>
+    
+
+    
+<script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/angular.js"></script>
+<script>window.angular || document.write('<script src="/static/jslib/angular/angular.min.js"><\/script>')</script>
+<script type="text/javascript" src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/90f27ee53bea.js"></script>
+<script>
+  function loadSession() {
+    var scope = angular.element('[ng-controller=AceCtrl]').scope();
+    
+    if (scope.code.cpp === '') {
+      scope.code.cpp = '/**\u000D\u000A * Definition for singly\u002Dlinked list.\u000D\u000A * struct ListNode {\u000D\u000A *     int val\u003B\u000D\u000A *     ListNode *next\u003B\u000D\u000A *     ListNode(int x) : val(x), next(NULL) {}\u000D\u000A * }\u003B\u000D\u000A */\u000D\u000Aclass Solution {\u000D\u000Apublic:\u000D\u000A    ListNode *deleteDuplicates(ListNode *head) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}\u003B';
+    }
+    
+    if (scope.code.java === '') {
+      scope.code.java = '/**\u000D\u000A * Definition for singly\u002Dlinked list.\u000D\u000A * public class ListNode {\u000D\u000A *     int val\u003B\u000D\u000A *     ListNode next\u003B\u000D\u000A *     ListNode(int x) {\u000D\u000A *         val \u003D x\u003B\u000D\u000A *         next \u003D null\u003B\u000D\u000A *     }\u000D\u000A * }\u000D\u000A */\u000D\u000Apublic class Solution {\u000D\u000A    public ListNode deleteDuplicates(ListNode head) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}';
+    }
+    
+    if (scope.code.python === '') {
+      scope.code.python = '# Definition for singly\u002Dlinked list.\u000D\u000A# class ListNode:\u000D\u000A#     def __init__(self, x):\u000D\u000A#         self.val \u003D x\u000D\u000A#         self.next \u003D None\u000D\u000A\u000D\u000Aclass Solution:\u000D\u000A    # @param head, a ListNode\u000D\u000A    # @return a ListNode\u000D\u000A    def deleteDuplicates(self, head):\u000D\u000A        ';
+    }
+    
+    scope.$apply();
+  }
+
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  $(function() {
+    if ($('.spoilers').length > 0) {
+      $('.spoilers').hide();
+      $('.showspoilers').click(function(e) {
+        if ($('.spoilers').is(":visible"))  {
+          $('.spoilers').hide();
+        } else {
+          $('.spoilers').show();
+        }
+        return false;
+      });
+    }
+    $('#interviewed_form').submit(function(e) {
+      e.preventDefault();
+      $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+          }
+        },
+      });
+      $.ajax({
+        type: "POST",
+        url: this.action,
+        dataType: "json",
+        data: $(this).serialize(),
+        success: function(data) {
+          $("#interviewed_form").hide();
+          if (data['result'] === 'success') {
+            $("#interviewed_state").addClass('text-success');
+            $("#interviewed_state").text("Thanks for your feedback");
+          } else if (data['result'] === 'voted') {
+            $("#interviewed_state").text("Sorry, you can only vote once");
+          } else if (data['result'] === 'anonymous') {
+            window.location.href = "/accounts/login/?next=/problems/remove-duplicates-from-sorted-list-ii/";
+          }
+          
+        },
+        error: function(data) {
+          $("#interviewed_form").hide();
+          $("#interviewed_state").addClass('text-danger');
+          $("#interviewed_state").text("Sorry, internal error.");
+        }
+      });
+    });
+    $('#ajaxform').submit(function(e) {
+      e.preventDefault();
+      $("#button1").attr("disabled", "disabled");
+      $("#submit_wait").removeClass('hide');
+      $("#submit_warning").addClass('hide');
+      $("#submit_error").addClass('hide');
+
+      var scope = angular.element('[ng-controller=AceCtrl]').scope();
+      $('input[name="typed_code"]').val(scope.code[scope.selectedLang.value]);
+
+      $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type)) {
+            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+          }
+        },
+      });
+      $.ajax({
+        type: "POST",
+        url: this.action,
+        dataType: "json",
+        data: $(this).serialize(),
+        success: function(data) {
+          $("#button1").removeAttr("disabled");
+          $("#submit_wait").addClass('hide');
+          if (data.error) {
+            $("#submit_warning").removeClass("hide");
+            $("#submit_warning").text(data.error);
+          } else {
+            $("#result").removeClass('hide');
+            var tmpHref = "/submissions/detail/0/";
+            tmpHref = tmpHref.substring(0, tmpHref.lastIndexOf('/'));
+            tmpHref = tmpHref.substring(0, tmpHref.lastIndexOf('/') + 1);
+            tmpHref += data.submission_id + "/";
+            $("#result_state").attr('href', tmpHref);
+            var url = tmpHref + 'check/';
+            var scope = angular.element('[ng-controller=PollerCtrl]').scope();
+            scope.startPoll(url);
+            scope.$apply();
+          }
+        },
+        error: function(data) {
+          $("#button1").removeAttr("disabled");
+          $("#submit_wait").addClass('hide');
+          $("#submit_error").removeClass('hide');
+        }
+
+      });
+    });
+
+    // Overwrites default code definition with saved user code (if exist) in editor.
+    loadSession();
+
+  });
+
+</script>
+
+    <script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/bootstrap.js"></script>
+    <script>$.fn.modal || document.write('<script src="/static/bootstrap/js/bootstrap.min.js"><\/script>')</script>
+
+    <a href="mailto:admin@leetcode.com?subject=Feedback" id="chat-link" target="_blank">
+    <i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-6849839-6', 'leetcode.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+  
+
+<script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/nr-454.js"></script><script src="Remove%20Duplicates%20from%20Sorted%20List%20II%20_%20LeetCode%20OJ_files/8d5fb92f6e" type="text/javascript"></script></body></html>
