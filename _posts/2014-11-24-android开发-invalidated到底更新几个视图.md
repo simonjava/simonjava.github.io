@@ -6,7 +6,7 @@ tags : [工作,android,view]
 ---
 {% include JB/setup %}
 
-<h4>{page.title}</h4>
+<h4>{{page.title}}</h4>
 
 今天工作中遇到一个问题，有两个视图A，B。都重写了`onDraw()`方法，都捕捉`onTouch()`事件调用`invalidate()`来重绘视图。
 调用日志发现很奇怪，发现我不管touch哪个视图，两个`onDraw()`都会被调用。经排查原因如下：

@@ -6,7 +6,7 @@ tags : [linux]
 ---
 {% include JB/setup %}
 
-<h4>{{page.title}}</h4>
+<h4>{page.title}</h4>
 
 * `Ctrl+Art+t`快捷键打开Terminal
 * `Ctrl+Art+F1-F6`进入纯文本模式，便于学习linux控制台，节省电脑资源。文本模式输入`startx`尝试启动X Window。

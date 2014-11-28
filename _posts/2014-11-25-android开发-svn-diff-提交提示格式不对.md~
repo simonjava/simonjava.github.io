@@ -6,7 +6,7 @@ tags : [工作,android,shell]
 ---
 {% include JB/setup %}
 
-<h4>{{page.title}}</h4>
+<h4>{page.title}</h4>
 
 提交svn diff时提示解析格式不对，原因是shell编码不对。
 解决方法，在环境变量中设置
