@@ -1,0 +1,43 @@
+---
+layout: post
+category : android开发
+tagline: "工作记录"
+tags : [工作,android,记录]
+---
+{% include JB/setup %}
+
+<h4>{{page.title}}</h4>
+
+12.02 下拉刷新`ListVIew`的代码研究。
+
+12.03 发送好友界面制作，listview 3部基本可优化学习：布局，判断空，viewholder,画圆形头像。Listview获取焦点问题。
+
+`convertView.requestFocus(true)`可以致使ListView对这一列无法获取焦点，致使无法点击。
+
+12.04 ListView更新数据
+不论ListView要显示的对象是什么(如：Cursor或Array或List)，要实现ListView数据的更新，都要手动去更改要显示的数据对象，然后调用相应的方法(如：requery()或`notifyDataSetChanged())`来刷新ListView。
+
+`notifyDataSetChanged`与`notifyDataSetInvalidated`的区别：
+数据源改变和数据源失效的区别。
+
+`android:enable`作用 TextView不可用 好像比 `android:clickable`好用。
+
+`android:textColor`指定`drawable`中的资源文件,可以根据不同状态设置字体颜色
+
+`setFocusable`设置view能否获得焦点,好用.`requestFocus`只是尝试获取焦点，再上网验证一下。
+
+`onItemClick`参数中的`position`与`getView`中`position`中是有区别的，前者算上了headView;
+
+
+12.05 Bundle传值。`getIntnet().getExtra()`获得值。
+
+BitmapFactory无法读取超大图片，利用BitmapFactory.Options的优化
+
+图片占用内存的算法 `width*height*Config` 图片比例的变化
+
+android 自定义 `ViewGroup`
+
+android `merge`标签：当LayoutInflater遇到这个标签时，它会跳过它，并将<merge />内的元素添加到<merge />的父元素里。迷惑了吗？让我们用<merge />来替换FrameLayout，并重写之前的XML布局。
+
+`android xmlns`,`attrs.xml`,布局代码，三者之间的对应关系。在layout中定义属性名字。`context.obtainStyledAttributes()`从attrs.xml中获得具体的类别和属性并赋值。
+

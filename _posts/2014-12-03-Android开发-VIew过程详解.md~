@@ -1,0 +1,11 @@
+---
+layout: post
+category : android开发
+tagline: "工作记录"
+tags : [工作,android,View,Measure]
+---
+{% include JB/setup %}
+
+<h4>{{page.title}}</h4>
+
+
