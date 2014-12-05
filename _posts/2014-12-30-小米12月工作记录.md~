@@ -10,7 +10,11 @@ tags : [工作,android,记录]
 
 12.02 下拉刷新`ListVIew`的代码研究。
 
+---
+
 12.03 发送好友界面制作，listview 3部基本可优化学习：布局，判断空，viewholder,画圆形头像。Listview获取焦点问题。
+
+---
 
 `convertView.requestFocus(true)`可以致使ListView对这一列无法获取焦点，致使无法点击。
 
@@ -28,6 +32,7 @@ tags : [工作,android,记录]
 
 `onItemClick`参数中的`position`与`getView`中`position`中是有区别的，前者算上了headView;
 
+------
 
 12.05 Bundle传值。`getIntnet().getExtra()`获得值。
 
