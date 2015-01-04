@@ -14,6 +14,6 @@ MarkdownPad2是一款很好的编写Markdown的编辑工具，使用免费，但
 
 ![MarkdownPad2破解](/img/markdown破解.jpg)
 
-最后，请大家支持正版软件（*没脸说*）。
+。
 
 
