@@ -1,0 +1,211 @@
+➜  Desktop  myandroidlog.sh com.mi.vtalk:remote
+
+[\s|\S]*()[\s|\S]*
+[\s|\S]*(OpenGLRenderer|D/dalvikvm|ADB_SERVICES|GraphicBuffer|BufferQueue)[\s|\S]*
+didn't find pid to trace
+➜  Desktop  myandroidlog.sh com.mi.vtalk:remote
+15291
+[\s|\S]*(15291)[\s|\S]*
+[\s|\S]*(OpenGLRenderer|D/dalvikvm|ADB_SERVICES|GraphicBuffer|BufferQueue)[\s|\S]*
+08-25 17:21:29.112 I/ActivityManager( 1183): Start proc com.mi.vtalk:remote for service com.mi.vtalk/com.mi.milink.sdk.service.MiLinkService: pid=15291 uid=10132 gids={50132, 3003, 3002, 1028, 1015, 1007}
+08-25 17:21:29.172 W/Mns.Global.Runtime(15291): DEBUG is ON
+08-25 17:21:29.192 E/MnsTracer(MiLinkSDK)(MiVtalk)(15291): File Trace Level Changed = 63
+08-25 17:21:29.192 E/MnsTracer(MiLinkSDK)(MiVtalk)(15291): Logcat Trace Level Changed = 63
+08-25 17:21:29.192 E/MiLinkServiceBinder(MiLinkSDK)(MiVtalk)(15291): Client Protection Saved : 10001;120;0.9.44;TEST;MiVtalk;com.mi.vtalk;zh_CN;;
+08-25 17:21:29.202 E/Crasheye(15291): AndroidManifest.xml CRASHEYE_CHANNEL param is not on!
+08-25 17:21:29.202 I/Crasheye(15291): Registering the exception handler
+08-25 17:21:29.202 I/Crasheye(15291): init success!
+08-25 17:21:29.202 E/Crasheye(15291): AndroidManifest.xml CRASHEYE_CHANNEL param is not on!
+08-25 17:21:29.202 I/CrasheyeNDK(15291): --------JNI_OnLoad---------
+08-25 17:21:29.202 I/CrasheyeNDK(15291): ---------JNI_OnLoad() end---------
+08-25 17:21:29.202 E/CrasheyeNDK(15291): Init  install handler from java
+08-25 17:21:29.202 I/CrasheyeNDK(15291): crasheye ndk version 2.0.0
+08-25 17:21:29.202 I/CrasheyeNDK(15291): custom file path /data/data/com.mi.vtalk/files/67f26880-5ba1-b7a1-237401a5-7de31a8b.custom
+08-25 17:21:29.202 I/CrasheyeNDK(15291): extra file path /data/data/com.mi.vtalk/files/67f26880-5ba1-b7a1-237401a5-7de31a8b.extra
+08-25 17:21:29.202 I/CrasheyeNDK(15291): breadcrumbs file path /data/data/com.mi.vtalk/files/67f26880-5ba1-b7a1-237401a5-7de31a8b.breadcrumbs
+08-25 17:21:29.202 I/CrasheyeNDK(15291): ndk crash hanler init sucess
+08-25 17:21:29.212 E/MnsTracer(MiLinkSDK)(MiVtalk)(15291): Client File Trace Level Changed = 63
+08-25 17:21:29.222 E/MnsTracer(MiLinkSDK)(MiVtalk)(15291): Client Logcat Trace Level Changed = 63
+08-25 17:21:29.222 W/MIVTALK(MiLinkSDK)(MiVtalk)(15291): VTalkApplication onCreate:15291
+08-25 17:21:29.232 V/PreloadClearUtil(MiLinkSDK)(MiVtalk)(15291): clear resource
+08-25 17:21:29.262 V/MiLinkAlarm(MiLinkSDK)(MiVtalk)(15291): Heartbeat Alarm enabled
+08-25 17:21:29.262 I/Crasheye(15291): NetSender: Sending data to url: http://rp.crasheye.cn/session?appkey=1fa7e2f0&uid=6be4d557063bcb60546c8eb6bac55729&sig=50f3414ca2f11cb59e8cbb9db74268af
+08-25 17:21:29.262 I/Crasheye(15291): NetSender: Sending data value: {"appversionname":"0.9.44","transactions":[],"platform":"Android","connection":"CONNECTED","screensize":"1080 * 1920","appstarttime":"1440494489","packagename":"com.mi.vtalk","locale":"CN","appkey":"1fa7e2f0","appversioncode":"120","sessionid":"94489219","osversion":"4.4.4","useridentifier":"NA","netstatus":"WIFI","sdkversion":"2.0.1","device":"Xiaomi MI 4LTE","extradata":{},"screenorientation":"Portrait","uuid":"6be4d557063bcb60546c8eb6bac55729","channel":"TEST"}{^1^ping^1440494489}
+08-25 17:21:29.262 W/SessionManager(MiLinkSDK)(MiVtalk)(15291): SessionManager created, milinkversion=45
+08-25 17:21:29.262 D/LibraryLoader(15291): try to load library: connectionbase from system lib
+08-25 17:21:29.262 D/LibraryLoader(15291): try to load library: milinkconnection from system lib
+08-25 17:21:29.262 I/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): loadLibrary return true
+08-25 17:21:29.262 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): setState mState = 0,newState = 0
+08-25 17:21:29.262 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): NetworkChangeReceiver, setCurrentNetworkInfo=NetworkInfo: type: WIFI[], state: CONNECTED/CONNECTED, reason: (unspecified), extra: "MIOffice", roaming: false, failover: false, isAvailable: true, isConnectedToProvisioningNetwork: false
+08-25 17:21:29.272 W/NetworkObserver(15291): LAST -> null
+08-25 17:21:29.272 W/NetworkObserver(15291): CURR -> NetworkState [connected=true, apnName="MIOffice", type=WIFI, accessPoint=NEVER_HEARD]
+08-25 17:21:29.272 I/NetworkDash(15291): imsi: 46000
+08-25 17:21:29.272 W/NetworkObserver(15291): 46000 => China Mobile
+08-25 17:21:29.282 I/DomainManager(MiLinkSDK)(MiVtalk)(15291): startResolve
+08-25 17:21:29.282 I/DomainManager(MiLinkSDK)(MiVtalk)(15291): startDefaultHostThread
+08-25 17:21:29.282 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): setSpeedTest delayMillis=43200000
+08-25 17:21:29.282 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): manualOpen
+08-25 17:21:29.282 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): internalManualOpen,mState=0
+08-25 17:21:29.282 W/MiLinkService(MiLinkSDK)(MiVtalk)(15291): MiLink Service Created, pid=15291, cost=42
+08-25 17:21:29.282 W/MiLinkService(MiLinkSDK)(MiVtalk)(15291): MiLink Service Started ,and onStartCommandReturn=1
+08-25 17:21:29.282 W/DomainManager(MiLinkSDK)(MiVtalk)(15291): domain [domain = link.g.mi.com,ip = 123.125.102.14,client localDNS = [none,none;10.237.8.8;10.237.8.9], errCode=0,timecost = 5ms]
+08-25 17:21:29.282 W/MiLinkService(MiLinkSDK)(MiVtalk)(15291): MiLink Service Binded
+08-25 17:21:29.292 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): open session, internalOpen with mState = 0
+08-25 17:21:29.292 I/MiLinkServerManager(MiLinkSDK)(MiVtalk)(15291): reset isBackgroud = false, has no recently server, so try 4, server No.0:[ sIP=10.106.120.15, sPort=443, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.292 I/MiLinkServerManager(MiLinkSDK)(MiVtalk)(15291): reset isBackgroud = false, has no recently server, so try 4, server No.1:[ sIP=10.106.120.15, sPort=80, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.292 I/MiLinkServerManager(MiLinkSDK)(MiVtalk)(15291): reset isBackgroud = false, has no recently server, so try 4, server No.2:[ sIP=10.106.120.15, sPort=8080, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.292 I/MiLinkServerManager(MiLinkSDK)(MiVtalk)(15291): reset isBackgroud = false, has no recently server, so try 4, server No.3:[ sIP=10.106.120.15, sPort=14000, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.292 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): NetworkChangeReceiver, networkInfo=NetworkInfo: type: WIFI[], state: CONNECTED/CONNECTED, reason: (unspecified), extra: "MIOffice", roaming: false, failover: false, isAvailable: true, isConnectedToProvisioningNetwork: false
+08-25 17:21:29.292 I/MnsServiceBinder(MiLinkSDK)(MiVtalk)(15291): init
+08-25 17:21:29.302 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): WIFI info : [4, "MIOffice", 180 Mbps, 94:b4:0f:83:85:90]
+08-25 17:21:29.302 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): isNetworkChange : false
+08-25 17:21:29.302 I/MnsServiceBinder(MiLinkSDK)(MiVtalk)(15291): init
+08-25 17:21:29.302 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): NetworkChangeReceiver, network not change, mState=0
+08-25 17:21:29.302 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): openSession if
+08-25 17:21:29.302 I/DomainManager(MiLinkSDK)(MiVtalk)(15291): startResolve
+08-25 17:21:29.302 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onStart, arg1=0, arg2=0to SessionNo:1
+08-25 17:21:29.302 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): openSession if
+08-25 17:21:29.302 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Run......
+08-25 17:21:29.302 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=1, arg2=0to SessionNo:1
+08-25 17:21:29.302 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=1, wParam=0
+08-25 17:21:29.312 I/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): connect to [ sIP=10.106.120.15, sPort=443, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_SNDBUF=524288
+08-25 17:21:29.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_RCVBUF=2097152
+08-25 17:21:29.312 V/[No:3]Session(MiLinkSDK)(MiVtalk)(15291): openSession if
+08-25 17:21:29.312 V/MiAccountManager(MiLinkSDK)(MiVtalk)(15291): login start, serviceToken.length=32, sSecurity.length=16, userId=75, forceLogin=false, fastLoginExtra.length=-1
+08-25 17:21:29.312 V/MiAccountManager(MiLinkSDK)(MiVtalk)(15291): login start, serviceToken.length=32, sSecurity.length=16, userId=75, forceLogin=false, fastLoginExtra.length=-1
+08-25 17:21:29.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:connect_nonb connect success 10.106.120.15:443
+08-25 17:21:29.312 V/[No:4]Session(MiLinkSDK)(MiVtalk)(15291): openSession if
+08-25 17:21:29.312 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onStart, arg1=0, arg2=0to SessionNo:2
+08-25 17:21:29.312 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): manualOpen
+08-25 17:21:29.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Run......
+08-25 17:21:29.312 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): setState mState = 0,newState = 1
+08-25 17:21:29.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:success to connect 10.106.120.15:443!
+08-25 17:21:29.312 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onStart, arg1=0, arg2=0to SessionNo:3
+08-25 17:21:29.312 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=1, arg2=0to SessionNo:2
+08-25 17:21:29.312 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onStart, arg1=0, arg2=0to SessionNo:4
+08-25 17:21:29.312 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=1, wParam=0
+08-25 17:21:29.312 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)(15291): MnsPacketDispatcher created, threadId=6452
+08-25 17:21:29.322 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onConnect, arg1=1, arg2=0to SessionNo:1
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Run......
+08-25 17:21:29.322 I/MnsServiceBinder(MiLinkSDK)(MiVtalk)(15291): Session State Changed From 0 → 1
+08-25 17:21:29.322 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=1, arg2=0to SessionNo:3
+08-25 17:21:29.322 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): internalManualOpen,mState=1
+08-25 17:21:29.322 I/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): connect to [ sIP=10.106.120.15, sPort=80, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_SNDBUF=524288
+08-25 17:21:29.322 V/[No:3]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=1, wParam=0
+08-25 17:21:29.322 I/[No:3]Session(MiLinkSDK)(MiVtalk)(15291): connect to [ sIP=10.106.120.15, sPort=8080, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.322 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)(15291): register packet callback. callback=com.mi.milink.sdk.aidl.IPacketCallback$Stub$Proxy@42354e20
+08-25 17:21:29.322 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): open session, internalOpen with mState = 1
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_SNDBUF=524288
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Run......
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_RCVBUF=2097152
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_RCVBUF=2097152
+08-25 17:21:29.322 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): internalOpen cache open reqeust in mState = 1
+08-25 17:21:29.322 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=1, arg2=0to SessionNo:4
+08-25 17:21:29.322 V/[No:4]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=1, wParam=0
+08-25 17:21:29.322 I/[No:4]Session(MiLinkSDK)(MiVtalk)(15291): connect to [ sIP=10.106.120.15, sPort=14000, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_SNDBUF=524288
+08-25 17:21:29.332 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:SO_RCVBUF=2097152
+08-25 17:21:29.332 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): manualOpen
+08-25 17:21:29.332 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): internalManualOpen,mState=1
+08-25 17:21:29.332 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)(15291): register packet callback. callback=com.mi.milink.sdk.aidl.IPacketCallback$Stub$Proxy@42355d38
+08-25 17:21:29.332 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): register event callback.
+08-25 17:21:29.332 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)(15291): DISPATCH_PACKET, mPacketCache.size=0
+08-25 17:21:29.332 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): register event callback.
+08-25 17:21:29.332 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)(15291): DISPATCH_PACKET, mPacketCache.size=0
+08-25 17:21:29.332 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): start hand shake, seq=1
+08-25 17:21:29.332 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): open session, internalOpen with mState = 1
+08-25 17:21:29.332 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): handleRequest seq=1 mNeedClientInfo=true [ sIP=10.106.120.15, sPort=443, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.332 I/SessionManager(MiLinkSDK)(MiVtalk)(15291): internalOpen cache open reqeust in mState = 1
+08-25 17:21:29.332 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup write=1
+08-25 17:21:29.332 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup now read=1
+08-25 17:21:29.332 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=2, arg2=0to SessionNo:1
+08-25 17:21:29.332 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=2, wParam=0
+08-25 17:21:29.342 V/[No:1]StreamUtil(MiLinkSDK)(MiVtalk)(15291): send packet, cmd=milink.handshake seq=1 qua=v1-and-mivtalk-0.9.44-test-zh_cn device=imei=867080022454445&model=MI 4LTE&os=4.4.4&apilevel=19&network=wifi&display=1080*1920&manu=Xiaomi&wifi=[4, "MIOffice", 180 Mbps, 94:b4:0f:83:85:90]&cell=0&versioncode=120&dns=[none,none;10.237.8.8;10.237.8.9] encodeType=0
+08-25 17:21:29.342 V/[No:1]StreamUtil(MiLinkSDK)(MiVtalk)(15291): up stream packet: seq=1, isPing=false, flag=0, len=103
+08-25 17:21:29.342 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): connection send data, seq=1
+08-25 17:21:29.342 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onSendBegin, arg1=1, arg2=0to SessionNo:1
+08-25 17:21:29.342 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): send begin: seq=1
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:send over [1],sendLen=103
+08-25 17:21:29.352 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onSendEnd, arg1=1, arg2=0to SessionNo:1
+08-25 17:21:29.352 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): send end: seq=1
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:connect_nonb connect success 10.106.120.15:80
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:success to connect 10.106.120.15:80!
+08-25 17:21:29.352 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onConnect, arg1=1, arg2=0to SessionNo:2
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): start hand shake, seq=2
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): handleRequest seq=2 mNeedClientInfo=true [ sIP=10.106.120.15, sPort=80, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup write=1
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup now read=1
+08-25 17:21:29.352 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onMsgProc, arg1=2, arg2=0to SessionNo:2
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): onMsgProc, uMsg=2, wParam=0
+08-25 17:21:29.352 V/[No:2]StreamUtil(MiLinkSDK)(MiVtalk)(15291): send packet, cmd=milink.handshake seq=2 qua=v1-and-mivtalk-0.9.44-test-zh_cn device=imei=867080022454445&model=MI 4LTE&os=4.4.4&apilevel=19&network=wifi&display=1080*1920&manu=Xiaomi&wifi=[4, "MIOffice", 180 Mbps, 94:b4:0f:83:85:90]&cell=0&versioncode=120&dns=[none,none;10.237.8.8;10.237.8.9] encodeType=0
+08-25 17:21:29.352 V/[No:2]StreamUtil(MiLinkSDK)(MiVtalk)(15291): up stream packet: seq=2, isPing=false, flag=0, len=103
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): connection send data, seq=2
+08-25 17:21:29.352 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onSendBegin, arg1=2, arg2=0to SessionNo:2
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): send begin: seq=2
+08-25 17:21:29.352 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:send over [2],sendLen=103
+08-25 17:21:29.352 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onSendEnd, arg1=2, arg2=0to SessionNo:2
+08-25 17:21:29.352 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): send end: seq=2
+08-25 17:21:29.382 I/Crasheye(15291): net send status code 200
+08-25 17:21:29.382 W/Crasheye(15291): NetSender: Transmitting result {"ret":0,"msg":"","data":{"appkeyvalid":true}}
+08-25 17:21:30.302 W/SessionManager(MiLinkSDK)(MiVtalk)(15291): Wakelock ACQUIRED :)
+08-25 17:21:30.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup write=1
+08-25 17:21:30.312 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup now read=1
+08-25 17:21:30.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Exit!!!!
+08-25 17:21:30.322 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:disconnect
+08-25 17:21:30.322 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onDisconnect, arg1=0, arg2=0to SessionNo:1
+08-25 17:21:30.322 I/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): OnDisconnect
+08-25 17:21:30.322 V/[No:1]Session(MiLinkSDK)(MiVtalk)(15291): hand shake error session, errCode=516, errMsg=network broken
+08-25 17:21:30.332 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup now read=1
+08-25 17:21:30.332 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:wakeup write=1
+08-25 17:21:30.362 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:Thread Exit!!!!
+08-25 17:21:30.362 D/native(MiLinkSDK)(MiVtalk)(15291): TcpConn:disconnect
+08-25 17:21:30.362 V/ConnectionImpl(MiLinkSDK)(MiVtalk)(15291): postEventFromNative msg:onDisconnect, arg1=0, arg2=0to SessionNo:2
+08-25 17:21:30.362 I/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): OnDisconnect
+08-25 17:21:30.362 V/[No:2]Session(MiLinkSDK)(MiVtalk)(15291): hand shake error session, errCode=516, errMsg=network broken
+08-25 17:21:30.592 V/SessionManager(MiLinkSDK)(MiVtalk)(15291): send data cmd=voip.blacklist.getblacklistsize, seq=3
+08-25 17:21:35.512 I/ActivityManager( 1183): Process com.mi.vtalk:remote (pid 15291) has died.
+
+
+
+^Z
+[10]  + 7609 suspended  myandroidlog.sh com.mi.vtalk:remote
+➜  Desktop  myandroidlog.sh com.mi.vtalk:remote
+
+[\s|\S]*()[\s|\S]*
+[\s|\S]*(OpenGLRenderer|D/dalvikvm|ADB_SERVICES|GraphicBuffer|BufferQueue)[\s|\S]*
+didn't find pid to trace
+➜  Desktop
+
+
+
+
+
+08-25 19:57:44.864 I/MnsServiceBinder(MiLinkSDK)(MiVtalk)( 6436): init
+08-25 19:57:44.864 V/MiAccountManager(MiLinkSDK)(MiVtalk)( 6436): login start, serviceToken.length=32, sSecurity.length=16, userId=75, forceLogin=false, fastLoginExtra.length=-1
+08-25 19:57:44.864 I/MnsServiceBinder(MiLinkSDK)(MiVtalk)( 6436): init
+08-25 19:57:44.864 V/MiAccountManager(MiLinkSDK)(MiVtalk)( 6436): login start, serviceToken.length=32, sSecurity.length=16, userId=75, forceLogin=false, fastLoginExtra.length=-1
+08-25 19:57:44.864 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)( 6436): MnsPacketDispatcher created, threadId=7291
+08-25 19:57:44.864 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)( 6436): register packet callback. callback=com.mi.milink.sdk.aidl.IPacketCallback$Stub$Proxy@423cbf90
+08-25 19:57:44.864 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)( 6436): register packet callback. callback=com.mi.milink.sdk.aidl.IPacketCallback$Stub$Proxy@423cb438
+08-25 19:57:44.864 V/SessionManager(MiLinkSDK)(MiVtalk)( 6436): register event callback.
+08-25 19:57:44.864 V/SessionManager(MiLinkSDK)(MiVtalk)( 6436): register event callback.
+08-25 19:57:44.864 V/MnsPacketDispatcher(MiLinkSDK)(MiVtalk)( 6436): DISPATCH_PACKET, mPacketCache.size=0
+08-25 19:57:45.334 W/SessionManager(MiLinkSDK)(MiVtalk)( 6436): Wakelock ACQUIRED :)
+08-25 19:57:50.484 I/ActivityManager( 1183): Process com.mi.vtalk:remote (pid 6436) has died.
+
+
+
+08-25 20:01:37.054 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_SNDBUF=524288
+08-25 20:01:37.054 V/[No:4]Session(MiLinkSDK)(MiVtalk)(11327): onMsgProc, uMsg=1, wParam=0
+08-25 20:01:37.054 I/[No:4]Session(MiLinkSDK)(MiVtalk)(11327): connect to [ sIP=10.106.120.15, sPort=14000, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 20:01:37.054 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_SNDBUF=524288
+08-25 20:01:37.054 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_RCVBUF=1048576
+08-25 20:01:37.054 I/[No:3]Session(MiLinkSDK)(MiVtalk)(11327): connect to [ sIP=10.106.120.15, sPort=8080, pIP=null, pPort=0, protocol=tcp, type=dns ]
+08-25 20:01:37.054 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_SNDBUF=524288
+08-25 20:01:37.064 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_RCVBUF=1048576
+08-25 20:01:37.064 D/native(MiLinkSDK)(MiVtalk)(11327): TcpConn:SO_RCVBUF=1048576
+08-25 20:01:38.014 W/SessionManager(MiLinkSDK)(MiVtalk)(11327): Wakelock ACQUIRED :)
+08-25 20:01:43.194 I/ActivityManager( 1183): Process com.mi.vtalk:remote (pid 11327) has died.
+
