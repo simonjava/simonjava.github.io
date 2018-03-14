@@ -1,0 +1,36 @@
+arouter-annotation
+
+arouter-api
+
+arouter-compiler
+
+java 注解
+
+元注解
+
+@Retention Source  Class Runtime 说明注解的保留策略
+
+@Target 定义注解的作用目标
+
+@Document 说明注解将被包含在 javadoc 中
+
+@Inherited 子类可以继承父类中该注解
+
+
+APT，就是Annotation Processing Tool 。
+
+
+
+
+
+ retCode: 0
+                                                               uuid: 21406408
+                                                               serviceToken: "_0103_OhzhqlKm7N+b/+so/clleK35liN2It6QCVXYgC8hS2f9pHzn0u2qt31Kiwo/P9tN"
+                                                               securityKey: "YJaY471FHEEySEhD"
+                                                               passToken: "_0103_6zSd4tNFjYSWM5osZwep0eAXZvHVuJZWZG0/kIZKO3k="
+                                                               nickname: "\347\224\250\346\210\2675937045196"
+                                                               headimgurl: "http://tvax1.sinaimg.cn/default/images/default_avatar_male_180.gif"
+                                                               sex: 1
+                                                               hasInnerAvatar: true
+                                                               hasInnerNickname: true
+                                                               hasInnerSex: true

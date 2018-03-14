@@ -1,0 +1,168 @@
+prepare
+	handleSourceInfoRefreshed  得到timeline
+
+
+domeSomeWork
+	updatePeriods
+		maybeUpdateLoadingPeriod 更新 mLoadingPeriodHolder 的引用
+			MediaPeriod.prepare(this)
+				MediaPeriod.startLoading(ExtractingLoadable) 跳到另一个线程 ExtractingLoadable.load
+		maybeContinueLoading 判断是否需要继续加载数据
+			MediaPeriod.continueLoading
+	updatePlaybackPositions
+		mRendererPositionUs = mRendererMediaClock.getPositionUs()
+
+
+另一个线程
+ExtractingLoadable.load
+	DefaultDataSource.open
+		DefaultHttpDataSource.open 是 http 封装成 DefaultExtractorInput
+		ExtractorMediaPeriod.selectExtractor （根据inputstream和uri选择相应的 Extractor 解析器）
+		FlvExtractor.read
+			FlvExtractor.readFlvHeader
+				new TackOutput 多个轨道 flv的话 一个音频 一个视频 ，一个轨道放一个DefaultTrackOutput。inputstream 在 DefaultExtractorInput 里面，
+				ExtractorMediaPeriod.endTracks
+				ExtractorMediaPeriod 中 maybeFinishPrepareRunnable 丢到播放器的主线程
+
+
+handlePeriodPrepared
+	MediaPeriodHolder.handlePrepared
+		选择track
+		updatePeriodTrackSelection
+	将mLoadingPeriodHolder 赋给 mReadingPeriodHolder
+	setPlayingPeriodHolder 将 mReadingPeriodHolder 赋给 mPlayingPeriodHolder
+	enableRenderers 为Renders设定数据源，设定mediaclock
+
+http写数据
+	DefaultTrackOutput.writeSample
+	DefaultTrackOutput.writeMetedata
+
+render读数据
+	SampleStreamImpl.readData
+		DefaultTrackOutput.readData
+
+MediaCodec 解码音频数据
+
+AudioTrack 播放音频数据
+
+MediaCodec 编码 解码都可以。我们先截图屏幕用作编码成视频传给 MediaMuxter。音频编码传给 MediaMuxter 进行合并。 MediaCodec有异步取 buffer 的办法，
+
+编码一般一帧对应一个 bufferinfo 和 data 。
+
+先生成一个视频文件，不带声音，源来自截图  yuv 视频 h264格式。
+
+When encoding H.264 video that means one frame, when decoding that means a single NAL unit
+
+mediaextract -->  mediacodec ---> 可使用opengl对图像进行再加工 动态表情啊---> mediamuxer
+
+H.264/AVC视频编码标准中，视频编码层面（VCL）和网络抽象层面（NAL）
+
+extract 到 decode 的 inputbuffer 到 outsurface  （changefragmetshader对图像做编辑） （这一步怎么到） inputsurface  到 mutex 的输入
+
+ 		编码 解码
+音频    
+视频
+
+mAudioEncoder.getOutputFormat()
+
+0 = {java.util.HashMap$HashMapEntry@4448} "what" -> "1869968451"
+1 = {java.util.HashMap$HashMapEntry@4449} "mime" -> "audio/mp4a-latm"
+2 = {java.util.HashMap$HashMapEntry@4450} "csd-0" -> "java.nio.ByteArrayBuffer[position=0,limit=2,capacity=2]"
+3 = {java.util.HashMap$HashMapEntry@4451} "channel-count" -> "2"
+4 = {java.util.HashMap$HashMapEntry@4452} "sample-rate" -> "44100"
+
+mOutputAudioTrack = 1;
+
+
+08-03 19:46:41.802 5943-6217/com.google.android.exoplayer2.demo E/MPEG4Writer: Unsupported mime 'audio/raw'
+                                                                               
+                                                                               --------- beginning of crash
+08-03 19:46:41.803 5943-6217/com.google.android.exoplayer2.demo E/AndroidRuntime: FATAL EXCEPTION: VideoEncodeHandlerThread
+                                                                                  Process: com.google.android.exoplayer2.demo, PID: 5943
+                                                                                  java.lang.IllegalStateException: Failed to add the track to the muxer
+                                                                                      at android.media.MediaMuxer.nativeAddTrack(Native Method)
+
+audio/raw 不能直接写给mp4啊 需要 pcm mp4a 格式呀
+
+mp4能解析的
+{aac-profile=5, bitrate=131072, mime=audio/mp4a-latm, channel-count=2, sample-rate=44100}
+
+播放器 inputformat
+Format(null, null, audio/mp4a-latm, -1, null, [-1, -1, -1.0], [2, 44100])
+
+播放器 outputformat
+{bit-width=16, what=1869968451, mime=audio/raw, channel-count=2, sample-rate=44100}
+
+
+播放器
+MediaCodecAudioRenderer  MediaCodec 处理流程
+
+
+
+MediaCodecInfo
+	mimeType = "audio/mp4a-latm"
+	name = "OMX.google.aac.decoder"
+
+
+format.getFrameworkMediaFormatV16()
+	0 = {java.util.HashMap$HashMapEntry@4610} "csd-0" -> "java.nio.ByteArrayBuffer[position=0,limit=2,capacity=2]"
+	1 = {java.util.HashMap$HashMapEntry@4611} "channel-count" -> "2"
+	2 = {java.util.HashMap$HashMapEntry@4612} "mime" -> "audio/mp4a-latm"
+	3 = {java.util.HashMap$HashMapEntry@4613} "sample-rate" -> "44100"
+
+render
+	onInputFormatChanged
+	maybeInitCodec
+		new MediaCodec  by name --》 OMX.qcom.video.decoder.avc 是个解码器
+		configureCodec format.getFrameworkMediaFormatV16()
+
+		drainOutputBuffer
+			onOutputFormatChanged
+
+
+我们的音频解码器 由 mediaextractor 提供
+
+by type
+{max-input-size=614, aac-profile=2, mime=audio/mp4a-latm, durationUs=9914920, csd-0=java.nio.ByteArrayBuffer[position=0,limit=2,capacity=2], channel-count=2, sample-rate=44100}
+
+
+只要格式一致就能合成 mediacodec 并不是强制的
+
+
+{csd-0=java.nio.ByteArrayBuffer[position=0,limit=2,capacity=2], channel-count=2, mime=audio/mp4a-latm, sample-rate=44100}
+
+爸爸妈妈好，这几天为了我们两小的结婚的事，两边大人都很操心，我也很操心。我昨天把晶晶的关于佛教的学习资料都收起来，之前她休息时间会经常参加一些佛学课堂，包括线上的讲课和线下佛学兴趣小组，我都不会再支持，先不说佛教教义对不对，准不准确，因为很多东西是难以界定对错的，只在于你用得好不好。事情闹成这样子，晶晶肯定用得不够好，她的一些做法是违反正常的人情世故的，而且感觉为了达到她的信仰是可以不顾家人感受和建议的，这点让我有些难以接受，所以这些愈发让我觉得宗教的可怕，以前在重庆时我想来到北京后一起生活会不会好些，来北京后依旧天天学，又会想生了小孩后肯定会缓和些，她总不至于不给小孩吃肉吧，现在我知道只要她还在不断学习这些，我们的矛盾就不会停止，除非我也变成一个佛教徒，她之前也表达过想找一个佛教徒做对象的想法，当时听了还挺难受的，所以我想如果两人真想好好过正常人的日子，我就不能再让她深入学习这些东西了，不然就算结了婚，两人也是观念冲突不断。
+我爸妈为了我的事，好几晚睡不着觉，相信你们也同样揪心，我的人生轨迹很普通，读书毕业恋爱工作，这样的轨迹也符合我自己和我父母的期望，人生也就那么几件大事，我也只想有个普通人的婚礼，过个普通人的生活，但现在发现好难。昨晚也和晶晶聊了，我现在也不理解她为什么这么痴迷这些东西，如果是因为休息时间太无聊，我可以早点下班陪她走走，看看电视剧，只要是对家人家庭有利的我都可以包容和迁就，总会有些更有趣的事情可以做。昨天晶晶也表达了我不让她继续深入学习，她就搬出去住的想法，这次我没有拦她，因为在我看来，没有什么比把这个家经营好更重要的了。
+
+
+但她就比较固执听不进去，她天天线下上课，休息时间网上听课上课，早上起得很早弄些仪式，她都不准我告诉你们，但现在感觉她的投入程度越来多，周末有一半时间都在外面参加一些佛教活动，虽然收入不多，会花近百元买些鱼什么的来放生，有时邀她出去她都以参加活动优先，微信里也加了很多佛教活动的群，许多人给她出谋划策，她又天真感性，有这样的圈子肯定研究得越来越深入，世界观价值观也会和我们普通人差别越来越大，这样下去不影响工作不影响生活是不可能的。爸妈也给我听人讲了些为了学佛，家庭孩子都不要的案例，什么人来劝都没用，内心非常强大，看了晶晶的态度，觉得和案例越来越像了。
+
+
+
+
+更新代码，修改较大，build.gradle去除了source set java，只使用 source set java-mitalk，只将米聊2.0中能复用的类移入 java-mitalk 的com.xiaomi.channel包下，子路径不变。我是基于星期五的代码做的修改，今天进的功能如果是写在app／src/main/java／com.wali.live包下的就可能没进去，需要自行将修改copy过去。后续会利用工具删除掉老直播的图片和layout资源。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+java-mitalk/com/xiaomi/channel
+
+
+
+
