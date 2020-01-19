@@ -1,0 +1,155 @@
+\documentclass[line,margin,UTF8]{res}
+\usepackage{xcolor}
+\usepackage{helvetica}  
+\usepackage{enumitem}
+\usepackage[hyperfootnotes=true,pdfborder={0 0 0}]{hyperref}  
+
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=STSong, ItalicFont=STKaiti]{STSong}
+\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+\setCJKmonofont{STFangsong}
+
+\hypersetup{pdfborder=0 0 0}
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
+ 
+\makeindex
+ 
+ %AOP三剑客。javapoet,idleHandler
+
+\begin{document}
+\name{程思敏
+(北京 男 1989年)
+}
+ 
+%\address{763585627@qq.com}
+\address{15718887533}
+
+\begin{resume}
+%\section{求职意向}
+%Android系统研发工程师
+ 
+
+ %\section{自我介绍}
+ %\begin{itemize}
+ %\item 专注于android端的技术研发，在小米担经历过米聊和小米直播两款产品的核心开发，小米直播SDK技术负责人。带领直播客户端在代码架构上完成模块化、组件化、插件化的技术演变，在移动端长链接数据通道，消息系统，音视频业务，图片处理，性能优化等方面有丰富的经验和技术沉淀。目前在北京帧趣科技负责安卓研发。
+ %\end{itemize}
+
+\section{项目经历} 
+{\bf 帧趣科技，客户端负责人，北京 \hfill  2019.02 $\sim$ 至今}
+ \vspace{3pt}
+
+  \begin{itemize}
+ \item \makebox[7cm][l]{\textit{撕歌App\hfil}} 2019.01 $\sim$ 至今
+ 	\vspace{-3pt}
+ 	\begin{itemize}
+ 		\item
+ 		以技术合伙人的身份加入帧趣创业团队，负责skr撕歌app从无到有的架构设计，关键性技术验证，使用模块化组件化的设计很好地解耦了各项业务功能，为业务的快速迭代提供了很好的底层设施保障，在一年迭代52个版本的节奏下，代码质量，包大小，内存性能都得到了很好的维护。
+
+		在组内营造良好的技术氛围，鼓励工具化效率化，
+		%将内存分析，打包构建(120秒缩减到15秒)，上传发布等落地成脚本，
+		促使组内完成java->kotlin的开发语言切换，在ios工期紧张时，引入flutter混合开发减小两端的开发量。
+
+ \end{itemize}
+ \end{itemize}
+
+{\bf 小米互联网四部，直播SDK技术负责人，北京 \hfill  2018.08 $\sim$ 2019.2}
+ \vspace{3pt}
+
+  \begin{itemize}
+ \item \makebox[7cm][l]{\textit{直播助手SDK\hfil}} 2018.02 $\sim$ 至今
+ 	\vspace{-3pt}
+ 	\begin{itemize}
+ 		\item 
+ 		直播助手SDK是miui的内置组件，负责直播助手sdk的开发，为宿主提供快速搭建直播业务系统的能力，功能包括直播间推拉流，直播列表，房间弹幕礼物等，提供APK AAR方式供宿主接入，接入方有小米游戏，小米音乐。
+ 		其中APK接入方式利用binder与各个宿主通信，宿主只需嵌入60KB的库即可拥有完整的直播能力，支持多账号管理，多宿主同时使用。项目代码严格模块化，有较好的维护性和扩展性。
+
+ 		负责小米直播的插件化能力开发，在两边框架融合成本很高的前提下，以插件化的方式极小地代价完成YY直播在小米直播的接入。
+ \end{itemize}
+ \end{itemize}
+
+
+{\bf 小米互娱，高级软件工程师，北京 \hfill  2015.06 $\sim$ 2018.8}
+ \vspace{3pt}
+
+ \begin{itemize}
+ \item \makebox[7cm][l]{\textit{新米聊App\hfil}} 2017.08 $\sim$ 2018.02
+ 	\vspace{-3pt}
+ 	\begin{itemize}
+ 		\item 
+ 		主要负责新米聊核心IM消息系统的设计与实现，负责单聊、群聊、群管理等业务，以及会话内各种消息类型的支持。设计了消息补洞，推拉结合等一系列策略保证消息的到达率，对消息到达率和会话交互体验负责。
+
+ \end{itemize}
+ \end{itemize}
+
+ \begin{itemize}
+ \item \makebox[7cm][l]{\textit{小米直播App\hfil}} 2016.02 $\sim$ 2017.08
+ 	\vspace{-3pt}
+ 	\begin{itemize}
+ 		\item 
+ 		负责直播小视频、消息通道、礼物商城、主页频道、直播间推拉流等模块的架构与开发。
+ 		
+ 		在组期间，组织组内成员使用rxjava、mvp对项目进行代码重构，使用router分割解耦业务模块，使得每个模块能够独立运行，并行开发。并为组内沉淀了一些如大图浏览，视频秒开，音视频录制合成等技术组件。
+
+ 		%包大小进行优化，使用fresco+subsample优化看大图组件，使用mat、hierarchyview、traceview、block+leakcanary等工具优化app性能。使用预拉取、cache、cdn预加载等手段优化视频秒开体验，基于MediaCodec为组内沉淀了一些音视频技术。
+
+ 		%目前带领3人小组开发米聊消息系统到直播的迁移工作。 远程控制项目，自定义涂鸦 贴纸view(判断一个点是否在矩形内)。
+
+ \end{itemize}
+ \end{itemize}
+ 
+\begin{itemize}
+\item \makebox[7cm][l]{\textit{milink sdk的研发\hfil}} 2015.07 $\sim$ 至今
+	\vspace{-3pt}
+	\begin{itemize}
+		\item 
+		一个通用的长连接通讯组件，将收发消息与具体业务剥离，基于tcp自定义协议，为宿主app提供完整的上下行数据能力，本人负责android sdk的开发，研发ip跑马、动态心跳、双进程保活、双通道、匿名通道，异常容灾等功能。发送消息的成功率在99.9\%。功能稳定，处于维护阶段，为集团的很多app提供数据通道能力。
+\end{itemize}
+\end{itemize}
+
+\section{掌握技能}
+精通java与kotlin语言
+精通直播系统与IM系统的设计
+精通模块化组件化的解耦合设计
+精通长链接组件的设计
+熟悉android系统原理
+熟悉插件化框架
+了解flutter跨平台混合开发
+了解gradle plugin与intellij Plugin开发
+熟悉java反射与注解原理
+
+\section{教育经历}
+中国科学技术大学  ~~{\sl 计算机硕士} ~~ 2012.09 $\sim$ 2015.07
+
+安徽大学 ~~ {\sl 计算机本科} ~~2008.09 $\sim$ 2012.07
+%\begin{itemize}
+%\item \makebox[7cm][l]{\textit{Shank开发~~实习\hfil}} 2014.10 $\sim$ 2015.02
+%	\vspace{-3pt}
+%	\begin{itemize}
+%		\item 
+%		一个孵化项目，仿snapchat做一款基于场景I/M聊天的阅后即焚的app。
+%\end{itemize}
+%\end{itemize}
+
+ 
+ %{\bf 科大讯飞，平嵌终端部，合肥，实习\hfill 2013.06 $\sim$ 2013.9}
+%	\begin{itemize}
+%		\item 
+%		参与掌上语厅App的开发。负责界面与业务逻辑的开发以及语音模块的集成。
+%
+%\end{itemize}
+
+%\section{获得奖项}
+%2015小米互娱新人奖
+
+%2016小米互娱优秀员工奖
+
+
+ \section{自我评价}
+较强的工程能力，皮实负责，热爱学习，喜欢钻研，自我驱动，不惧棘手难题，持续关注新技术发展。
+%希望能到一个技术氛围浓厚的组里，大家一起交流成长。
+
+%\section{PATENTS}
+%One patent filed for Intel work
+ 
+\end{resume}    
+\end{document}
