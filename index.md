@@ -1,6 +1,6 @@
 ---
 layout: page
-title: A caibi's blog!
+title: simon's blog!
 tagline: 小时候不学习，长大吃狗屎~
 ---
 {% include JB/setup %}
