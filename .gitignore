@@ -2,3 +2,4 @@ latex简历/*.log
 latex简历/*.aux
 latex简历/*.fdb_latexmk
 latex简历/*.fls
+.DS_Store
